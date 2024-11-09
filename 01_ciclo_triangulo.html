@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // CÓDIGO PROPIO
+    function ciclo(number){
+        let sec = 1;
+        let code_01 = '', code_02 = '#';
+        while (sec <= number){
+            code_01 += code_02;
+            console.log(code_01);
+            sec += 1;
+        }
+    }
+    ciclo(7);
+
+    // SOLUCIÓN
+    for (let line = "#"; line.length < 8; line += "#")
+        console.log(line);
+
+</script>
+
+</html>

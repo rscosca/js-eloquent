@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    // CÓDIGO PROPIO
+    let final = '';
+    let fila = 1;
+    let size = 10   ;
+    for(let number = 1; number<=(size*size); number++){
+        if (fila % 2 != 0) {
+            (number % 2 == 0 ) ? (final += '#') : (final += ' '); 
+        } else {
+            (number % 2 == 0 ) ? (final += ' ') : (final += '#'); 
+        }
+        if (number % size == 0) {
+            final += '\n'
+            fila++
+        }
+    }
+    console.log(final); 
+
+
+
+    // SOLUCIÓN
+    
+
+</script>
+
+</html>
