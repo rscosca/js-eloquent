@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eloquent - Contador de frijoles</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    let cadena = "Bebo burbujas brillantes bajo bellos bosques bañados"
+
+    // Función que devuelve el número de 'b' de un string
+    function countBs(text){
+        let arrayText = text.split('');
+            bCount = 0;
+        arrayText.forEach(letter => {
+            if (letter == 'b') bCount++
+        });
+        return bCount;
+    }
+    console.log(countBs(cadena))
+    
+    // Función que devuelve el número de 'b' de un string
+    function countCharacter(text, letter){
+        let arrayText = text.split('');
+            letterCount = 0;
+        arrayText.forEach(item => {
+            if (item == letter) letterCount++
+        });
+        return letterCount;
+    }
+    console.log(countCharacter(cadena, 'u'))
+    
+
+
+</script>
+
+</html>

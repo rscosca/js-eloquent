@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eloquent - Lista a array</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    let arrayTest = [1, 2, 3];
+    let listTest = {    
+        value: 1,    
+        rest: {
+            value: 2,    
+            rest: {
+                value: 3,    
+                rest: null
+            }
+        } 
+    }
+
+    function arrayToList(array) {
+        let list = null;
+        // Iteramos el array desde el final hacia el principio
+        // para construir la lista en el orden correcto (no invertido).
+        for (let i = array.length - 1; i >= 0; i--) {
+            list = { value: array[i], rest: list };
+        }
+        return list;
+    }
+    function listToArray(listInitial) {
+        const array = [];
+        let nodo = listInitial;
+        while (nodo !== null) {
+            array.push(nodo.value)
+            nodo = nodo.rest
+        }
+        return array;
+    }
+    function prependCustom(listInitial, element){
+        // Retorna un nuevo objeto de lista con el elemento
+        // al frente y el resto de la lista original.
+        return {
+            value: element,
+            rest: listInitial
+        };
+    }
+    function insertElement(list, element, position) {
+        if (position === 0) {
+            // Si la posición es 0, se añade al principio (como en prepend)
+            return { value: element, rest: list };
+        } else if (list === null) {
+            // Si se llega al final de la lista y la posición no es 0,
+            // no se puede insertar. Se devuelve la lista tal cual.
+            return null;
+        } else {
+            // Se llama recursivamente a la función con el resto de la lista
+            // y se decrementa la posición.
+            return {
+                value: list.value,
+                rest: insertElement(list.rest, element, position - 1)
+            };
+        }
+    }
+
+    // Ejemplo de arrayToList
+    console.table(arrayToList(arrayTest));
+
+    // Ejemplo de listToArray
+    console.log(listToArray(listTest));
+    
+    // Ejemplo de prependCustom para añadir un elemento al principio de una lista
+    console.log(prependCustom(listTest, 5));
+    
+    // Ejemplo de insertElement para añadir un elemento en una posición específica
+    console.log(insertElement(listTest, 5, 2));
+
+</script>
+
+</html>

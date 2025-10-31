@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eloquent - Reversión de un array</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    function reverseArray(arrayInitial) {
+        let arrayFinal = [];
+        for (let item of arrayInitial){
+            arrayFinal.unshift(item);
+        }
+        return arrayFinal;
+    }
+
+    function reverseArrayInPlace(arrayInitial) {
+        for ( current = 0; current < arrayInitial.length; current++) {
+            arrayInitial.splice(current, 0, arrayInitial[arrayInitial.length-1])
+            arrayInitial.pop();
+        }
+        return arrayInitial;
+    }
+
+    let arrayTest = [1, 2, 3, 4, 5];
+    console.log(reverseArray(arrayTest));
+    console.log(reverseArrayInPlace(arrayTest));
+
+</script>
+
+</html>

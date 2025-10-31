@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eloquent - Suma de un rango</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    function range(start, end, step) {
+        if (step == undefined) {
+            step = start < end ? 1 : -1;
+        }
+        let arrayFinal = [];
+        for (let i = start; (step > 0 ? i <= end : i >= end); i += step) {
+            //console.log(i);
+            arrayFinal.push(i);
+        }
+        return arrayFinal;
+    }
+
+    function sum(array) {
+        let sumTotal = 0;
+        array.forEach(item => {
+            sumTotal += item;    
+        });
+        return sumTotal;
+    }
+
+    console.log(range(5, 2, -1));
+    console.log(sum(range(5, 2, -1)));
+    console.log(range(10, 1));
+    console.log(sum(range(10, 1)));
+    console.log(range(5, 2, -2));
+    console.log(range(1, 10, 3));
+    console.log(range(1, 10, 4));
+    
+
+</script>
+
+</html>

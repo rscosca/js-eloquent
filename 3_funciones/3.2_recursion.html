@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Eloquent - Recursión</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+    let number = -55
+
+    // Función que devuelve el menor valor
+    function isEven(a){
+        return (Math.abs(a) % 2 == 0) ? true : false
+    }
+    console.log(isEven(number))
+    
+    // Función como arrow Function
+    let isEven2 = (a) => (Math.abs(a) % 2 == 0) ? true : false
+    console.log(isEven2(number))
+
+    // Función como dice el enunciado
+    function isEven3(a){
+        if (a == 0) return true
+        else if (a == 1) return false
+        else if (a < 0) return isEven3(-a)
+        else return isEven3(a-2)
+    }
+    console.log(isEven3(number))
+
+</script>
+
+</html>
